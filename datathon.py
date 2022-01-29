@@ -57,7 +57,7 @@ def train(p):
     print("Number of random walks: {}".format(len(walks)))
 
     str_walks = [[str(n) for n in walk] for walk in walks]
-    model = Word2Vec(str_walks, vector_size=20, min_count=0, sg=1, workers=multiprocessing.cpu_count(), epochs=3)
+    model = Word2Vec(str_walks, size=20, min_count=0, sg=1, workers=multiprocessing.cpu_count(), epochs=3)
 
     best_acc = -1
     best_threshold = None
