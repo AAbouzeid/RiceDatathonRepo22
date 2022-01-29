@@ -49,7 +49,7 @@ def train(p):
 
     walks = rw.run(
         nodes=list(sgraph.nodes()),  # root nodes
-        length=100,  # maximum length of a random walk
+        length=50,  # maximum length of a random walk
         n=10,  # number of random walks per root node
         p=p,  # Defines (unormalised) probability, 1/p, of returning to source node
         q=1.0,  # Defines (unormalised) probability, 1/q, for moving away from source node
@@ -57,7 +57,7 @@ def train(p):
     print("Number of random walks: {}".format(len(walks)))
 
     str_walks = [[str(n) for n in walk] for walk in walks]
-    model = Word2Vec(str_walks, size=20, min_count=0, sg=1, workers=multiprocessing.cpu_count(), epochs=3)
+    model = Word2Vec(str_walks, size=20, min_count=0, sg=1, workers=multiprocessing.cpu_count(), iter=3)
 
     best_acc = -1
     best_threshold = None

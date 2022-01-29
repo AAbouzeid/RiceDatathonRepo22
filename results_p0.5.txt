@@ -1,0 +1,1 @@
+Best Accuracy for p=0.5 it acc=0.6009438305709024 at threshold=2
